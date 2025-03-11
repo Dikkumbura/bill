@@ -1,11 +1,27 @@
 [build]
-  command = "npm run build"
+  command = "npm run build:netlify"
   publish = "dist"
   [build.environment]
-    NODE_OPTIONS = "--max-old-space-size=4096"
+    NODE_OPTIONS = "--max-old-space-size=4096 --max-old-space-size=4096"
+    NODE_VERSION = "20"  # Use a newer Node version
+    NPM_FLAGS = "--no-audit --no-fund"  # Speed up npm
 
 # Handle SPA routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200 
+  status = 200
+
+# Enable brotli compression
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = true 
