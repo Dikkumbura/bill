@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -63,7 +62,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               )}
             >
               <img 
-                src="/AIC.svg" 
+                src="/images/AIC.svg" 
                 alt="ACC Insurance Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
@@ -78,7 +77,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               )}
             >
               <img 
-                src="/INVO-PEO-logo-final.png" 
+                src="/images/INVO-PEO-logo-final.png" 
                 alt="Invopeo Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
@@ -93,7 +92,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               )}
             >
               <img 
-                src="/MadisonPEO-LogoWHITE55-1.png" 
+                src="/images/MadisonPEO-LogoWHITE55-1.png" 
                 alt="Madison PEO Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
@@ -108,7 +107,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               )}
             >
               <img 
-                src="/HEADER---MIG-AVATAR-LOGO---MADISON-ONLY-1.png.webp" 
+                src="/images/HEADER---MIG-AVATAR-LOGO---MADISON-ONLY-1.png.webp" 
                 alt="MIG Insurance Group Logo" 
                 className="w-12 h-12 object-contain p-1 brightness-125"
               />
@@ -123,7 +122,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               )}
             >
               <img 
-                src="/ITS-weblogo200.jpg" 
+                src="/images/ITS-weblogo200.jpg" 
                 alt="Learn Insurance Live Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
@@ -138,7 +137,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               )}
             >
               <img 
-                src="/INVOU logo-HORIZ.png" 
+                src="/images/INVOU logo-HORIZ.png" 
                 alt="INVO Underwriting Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
@@ -153,7 +152,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               )}
             >
               <img 
-                src="/MIAN_logo_notag.svg" 
+                src="/images/MIAN_logo_notag.svg" 
                 alt="Madisonianetwork Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
@@ -168,7 +167,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               )}
             >
               <img 
-                src="/arrow_brokers_redoSMALL.jpg" 
+                src="/images/arrow_brokers_redoSMALL.jpg" 
                 alt="Arrow Brokers Logo" 
                 className="w-12 h-12 object-contain p-1"
               />

@@ -1,4 +1,3 @@
-
 import AnimatedSection from "./AnimatedSection";
 import { Award, Briefcase, Users, TrendingUp } from "lucide-react";
 
@@ -42,7 +41,7 @@ const About = () => {
               <div className="relative w-48 h-48 mx-auto lg:mx-0 mb-8">
                 <div className="absolute inset-0 bg-white/10 rounded-full transform -rotate-6"></div>
                 <img
-                  src="/BILL-AROWOOD-PROFILE-PICTURE-CROPPING-TEST1.png.webp"
+                  src="/images/BILL-AROWOOD-PROFILE-PICTURE-CROPPING-TEST1.png.webp"
                   alt="William Arrowood"
                   className="relative rounded-full w-full h-full object-cover border-4 border-white/10"
                 />
