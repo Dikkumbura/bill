@@ -13,17 +13,19 @@ export default defineConfig({
     cssMinify: true,
     assetsInlineLimit: 2048,
     chunkSizeWarningLimit: 2000,
+    reportCompressedSize: false,
     rollupOptions: {
-      maxParallelFileOps: 2,
+      maxParallelFileOps: 1,
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react')) return 'react-vendor';
-            if (id.includes('@tanstack')) return 'tanstack-vendor';
-            if (id.includes('lucide-react')) return 'icons-vendor';
-            return 'vendor';
-          }
-          if (id.includes('src/components')) return 'components';
+        manualChunks: {
+          'vendor': [
+            'react', 
+            'react-dom', 
+            'react-router-dom', 
+            '@tanstack/react-query', 
+            'lucide-react'
+          ],
+          'components': [/src\/components/]
         },
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash][extname]'
