@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 215 76% 15%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 76% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 76% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 215 76% 15%;
+
+    --secondary: 215 70% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 70% 20%;
+    --muted-foreground: 210 40% 90%;
+
+    --accent: 215 70% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+/* Custom Utilities */
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-navy to-navy-light;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .blur-backdrop {
+    @apply backdrop-blur-lg bg-white/80 dark:bg-navy/80;
+  }
+
+  .nav-underline {
+    @apply relative before:absolute before:-bottom-2 before:h-0.5 before:w-0 before:bg-navy before:transition-all before:duration-300 hover:before:w-full;
+  }
+  
+  /* Section Backgrounds */
+  .section-background {
+    @apply absolute inset-0 overflow-hidden;
+  }
+  
+  .section-grid {
+    @apply absolute inset-0;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: gridFloat 20s linear infinite;
+    mix-blend-mode: overlay;
+  }
+  
+  .section-glow {
+    @apply absolute inset-0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
+      radial-gradient(circle at 80% 70%, rgba(23, 58, 105, 0.15) 0%, transparent 60%);
+    filter: blur(60px);
+    animation: glowPulse 8s ease-in-out infinite;
+    mix-blend-mode: soft-light;
+  }
+  
+  .section-stars {
+    @apply absolute inset-0;
+    background-image: radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.1) 50%, transparent 0),
+                     radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.1) 50%, transparent 0),
+                     radial-gradient(2px 2px at 50px 160px, rgba(255, 255, 255, 0.1) 50%, transparent 0);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: starTwinkle 4s ease-in-out infinite;
+    opacity: 0.3;
+    mix-blend-mode: screen;
+  }
+  
+  /* Hero Background */
+  .hero-background {
+    @apply absolute inset-0 overflow-hidden;
+    background: linear-gradient(to bottom right, #0A2342, #173A69);
+  }
+  
+  .hero-grid {
+    @apply absolute inset-0;
+    background-image: 
+      linear-gradient(to right, rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: gridFloat 20s linear infinite;
+    mix-blend-mode: overlay;
+  }
+  
+  .hero-glow {
+    @apply absolute inset-0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.4) 0%, transparent 60%),
+      radial-gradient(circle at 80% 70%, rgba(23, 58, 105, 0.4) 0%, transparent 60%),
+      radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+    filter: blur(80px);
+    animation: glowPulse 8s ease-in-out infinite;
+    mix-blend-mode: soft-light;
+  }
+  
+  .hero-stars {
+    @apply absolute inset-0;
+    background-image: radial-gradient(2px 2px at 20px 30px, rgba(212, 175, 55, 0.15) 50%, transparent 0),
+                     radial-gradient(2px 2px at 40px 70px, rgba(212, 175, 55, 0.1) 50%, transparent 0),
+                     radial-gradient(2px 2px at 50px 160px, rgba(212, 175, 55, 0.15) 50%, transparent 0),
+                     radial-gradient(2px 2px at 90px 40px, rgba(212, 175, 55, 0.1) 50%, transparent 0),
+                     radial-gradient(2px 2px at 130px 80px, rgba(212, 175, 55, 0.15) 50%, transparent 0);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: starTwinkle 4s ease-in-out infinite;
+    opacity: 0.5;
+    mix-blend-mode: screen;
+  }
+  
+  @keyframes gridFloat {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  
+  @keyframes glowPulse {
+    0% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.6; transform: scale(1); }
+  }
+  
+  @keyframes starTwinkle {
+    0% { opacity: 0.4; filter: blur(0.5px); }
+    50% { opacity: 0.8; filter: blur(1px); }
+    100% { opacity: 0.4; filter: blur(0.5px); }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-grid {
+      background-size: 30px 30px;
+    }
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
