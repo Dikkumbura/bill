@@ -1,4 +1,3 @@
-
 import BusinessCard from "./BusinessCard";
 import AnimatedSection from "./AnimatedSection";
 import { useEffect, useRef, useState } from "react";
@@ -33,11 +32,6 @@ const businesses = [
     name: "Invo Underwriting",
     description: "Specialized underwriting services with expertise in risk assessment and policy management.",
     url: "https://invounderwriting.com/"
-  },
-  {
-    name: "Madisonianetwork",
-    description: "Insurance networking platform connecting professionals and businesses within the industry.",
-    url: "https://madisonianetwork.com/"
   },
   {
     name: "Arrow Brokers",
