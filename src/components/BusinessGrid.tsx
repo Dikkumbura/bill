@@ -1,15 +1,14 @@
 import BusinessCard from "./BusinessCard";
 import AnimatedSection from "./AnimatedSection";
-import { useEffect, useRef, useState } from "react";
 
 const businesses = [
   {
-    name: "ACC Insurance",
+    name: "AIC Insurance",
     description: "Specialized insurance solutions with a focus on comprehensive coverage and customer service.",
     url: "https://www.accinsco.com/"
   },
   {
-    name: "Invopeo",
+    name: "INVO PEO",
     description: "Innovative insurance solutions designed for modern business needs and risk management.",
     url: "https://invopeo.com/"
   },
@@ -19,12 +18,12 @@ const businesses = [
     url: "https://www.madisonpeo.com/"
   },
   {
-    name: "MIG Insurance Group",
+    name: "Madison Insurance Group",
     description: "Comprehensive insurance services with a client-centered approach to coverage and claims.",
     url: "https://www.miginsgroup.com/"
   },
   {
-    name: "Learn Insurance Live",
+    name: "Insurance Training School",
     description: "Educational platform for insurance professionals focused on industry training and development.",
     url: "https://www.learninsurancelive.com/"
   },
@@ -41,54 +40,21 @@ const businesses = [
 ];
 
 const BusinessGrid = () => {
-  const [columns, setColumns] = useState(4);
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const updateColumns = () => {
-      const width = window.innerWidth;
-      if (width < 640) setColumns(1);
-      else if (width < 1024) setColumns(2);
-      else if (width < 1280) setColumns(3);
-      else setColumns(4);
-    };
-
-    updateColumns();
-    window.addEventListener('resize', updateColumns);
-    return () => window.removeEventListener('resize', updateColumns);
-  }, []);
-
-  // Distribute businesses across columns
-  const columnArrays = Array.from({ length: columns }, (_, i) => 
-    businesses.filter((_, index) => index % columns === i)
-  );
-
+  // Since we have 7 cards, we can arrange them in a 2-3-2 pattern
+  // This creates a more balanced, diamond-like layout
   return (
-    <section id="businesses" className="section-padding relative overflow-hidden">
+    <section id="businesses" className="enhanced-section py-16 relative">
       {/* Background Effects */}
-      <div className="absolute inset-0 z-0">
-        <div className="hero-background"></div>
-        <div className="hero-grid opacity-70"></div>
-        <div 
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.15),transparent_70%)] blur-3xl"
-          style={{
-            background: `
-              radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
-              radial-gradient(circle at 70% 70%, rgba(23, 58, 105, 0.15) 0%, transparent 60%),
-              radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%)
-            `,
-            mixBlendMode: 'soft-light',
-            animation: 'glowPulse 8s ease-in-out infinite'
-          }}
-        ></div>
-        <div className="hero-stars opacity-30"></div>
-      </div>
+      <div className="grid-overlay"></div>
+      <div className="glow-orb glow-orb-blue" style={{ width: "400px", height: "400px", top: "15%", left: "5%" }}></div>
+      <div className="glow-orb glow-orb-indigo" style={{ width: "350px", height: "350px", bottom: "5%", right: "10%" }}></div>
+      <div className="glow-orb glow-orb-blue" style={{ width: "250px", height: "250px", top: "40%", right: "20%" }}></div>
       
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <AnimatedSection>
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Insurance Business Portfolio
+              Insurance Enterprise Portfolio
             </h2>
             <div className="h-1 w-24 bg-white mx-auto mb-6"></div>
             <p className="text-white/80 max-w-2xl mx-auto">
@@ -98,24 +64,45 @@ const BusinessGrid = () => {
           </div>
         </AnimatedSection>
 
-        <div ref={gridRef} className="flex gap-4 sm:gap-6">
-          {columnArrays.map((columnBusinesses, columnIndex) => (
-            <div key={columnIndex} className="flex-1 flex flex-col gap-4 sm:gap-6">
-              {columnBusinesses.map((business, index) => (
-                <AnimatedSection 
-                  key={business.name} 
-                  delay={100 * (index + columnIndex)} 
-                  threshold={0.1}
-                >
-                  <BusinessCard
-                    name={business.name}
-                    description={business.description}
-                    url={business.url}
-                    index={index}
-                  />
-                </AnimatedSection>
-              ))}
-            </div>
+        {/* First row: 2 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {businesses.slice(0, 2).map((business, index) => (
+            <AnimatedSection key={business.name} delay={index * 75} threshold={0.1}>
+              <BusinessCard
+                name={business.name}
+                description={business.description}
+                url={business.url}
+                index={index}
+              />
+            </AnimatedSection>
+          ))}
+        </div>
+        
+        {/* Middle row: 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {businesses.slice(2, 5).map((business, index) => (
+            <AnimatedSection key={business.name} delay={(index + 2) * 75} threshold={0.1}>
+              <BusinessCard
+                name={business.name}
+                description={business.description}
+                url={business.url}
+                index={index + 2}
+              />
+            </AnimatedSection>
+          ))}
+        </div>
+        
+        {/* Bottom row: 2 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {businesses.slice(5, 7).map((business, index) => (
+            <AnimatedSection key={business.name} delay={(index + 5) * 75} threshold={0.1}>
+              <BusinessCard
+                name={business.name}
+                description={business.description}
+                url={business.url}
+                index={index + 5}
+              />
+            </AnimatedSection>
           ))}
         </div>
       </div>

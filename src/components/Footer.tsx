@@ -1,4 +1,3 @@
-
 import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
@@ -11,7 +10,7 @@ const Footer = () => {
               William Arrowood
             </a>
             <p className="text-white/60 mt-2 max-w-xs">
-              A portfolio of innovative businesses in the insurance industry.
+              A portfolio of innovative enterprises in the insurance industry.
             </p>
           </div>
           
@@ -19,19 +18,18 @@ const Footer = () => {
             <div>
               <h4 className="text-sm font-medium uppercase tracking-wider mb-4">Businesses</h4>
               <ul className="space-y-2">
-                <li><a href="https://www.accinsco.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">ACC Insurance</a></li>
-                <li><a href="https://invopeo.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">Invopeo</a></li>
+                <li><a href="https://www.accinsco.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">AIC Insurance</a></li>
+                <li><a href="https://invopeo.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">INVO PEO</a></li>
                 <li><a href="https://www.madisonpeo.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">Madison PEO</a></li>
-                <li><a href="https://www.miginsgroup.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">MIG Insurance Group</a></li>
+                <li><a href="https://www.miginsgroup.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">Madison Insurance Group</a></li>
               </ul>
             </div>
             
             <div>
               <h4 className="text-sm font-medium uppercase tracking-wider mb-4">More</h4>
               <ul className="space-y-2">
-                <li><a href="https://www.learninsurancelive.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">Learn Insurance Live</a></li>
+                <li><a href="https://www.learninsurancelive.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">Insurance Trainin School</a></li>
                 <li><a href="https://invounderwriting.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">Invo Underwriting</a></li>
-                <li><a href="https://madisonianetwork.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">Madisonianetwork</a></li>
                 <li><a href="https://arrowbrokers.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">Arrow Brokers</a></li>
               </ul>
             </div>
@@ -49,9 +47,22 @@ const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white/60 text-sm">
-            &copy; {new Date().getFullYear()} William Arrowood. All rights reserved.
-          </p>
+          <div className="footer-section py-6 border-t border-white/10">
+            <div className="container mx-auto px-6">
+              <p className="text-white/70 text-center text-sm">
+                © 2025 William Arrowood. All rights reserved. 
+                <span className="mx-2 text-white/50">|</span> 
+                Designed by <a 
+                  href="https://insurx.us" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  <span className="font-slab-serif font-bold tracking-wide text-white">INSUR</span><span className="font-slab-serif font-bold tracking-wide text-[#ff8200]">X</span>
+                </a>
+              </p>
+            </div>
+          </div>
           
           <div className="mt-4 md:mt-0">
             <a

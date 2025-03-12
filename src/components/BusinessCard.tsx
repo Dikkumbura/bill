@@ -15,14 +15,13 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
   // Extract domain name without protocol and www
   const domain = url.replace(/(https?:\/\/)?(www\.)?/, '');
 
-  // Check if it's ACC Insurance or Invopeo to show their logos
-  const isAccInsurance = name === "ACC Insurance";
-  const isInvopeo = name === "Invopeo";
+  // Check if it's specific companies
+  const isAicInsurance = name === "AIC Insurance";
+  const isInvoPeo = name === "INVO PEO";
   const isMadisonPeo = name === "Madison PEO";
-  const isMigInsurance = name === "MIG Insurance Group";
-  const isLearnInsurance = name === "Learn Insurance Live";
+  const isMadisonInsurance = name === "Madison Insurance Group";
+  const isInsuranceTraining = name === "Insurance Training School";
   const isInvoUnderwriting = name === "Invo Underwriting";
-  const isMadisonianetwork = name === "Madisonianetwork";
   const isArrowBrokers = name === "Arrow Brokers";
 
   return (
@@ -53,7 +52,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
       
       <div className="p-6 relative z-10 flex flex-col transition-colors duration-500">
         <div className="flex justify-between items-start mb-4">
-          {isAccInsurance ? (
+          {isAicInsurance ? (
             <div 
               className={cn(
                 "w-14 h-14 flex items-center justify-center rounded-lg overflow-hidden bg-navy-dark",
@@ -63,22 +62,22 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
             >
               <img 
                 src="/images/AIC.svg" 
-                alt="ACC Insurance Logo" 
+                alt="AIC Insurance Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
             </div>
-          ) : isInvopeo ? (
+          ) : isInvoPeo ? (
             <div 
               className={cn(
                 "w-14 h-14 flex items-center justify-center rounded-lg overflow-hidden",
-                "bg-navy-dark", // Dark background for Invopeo logo
+                "bg-navy-dark", // Dark background for INVO PEO logo
                 "transition-all duration-500",
                 isHovered ? "scale-110" : "scale-100"
               )}
             >
               <img 
                 src="/images/INVO-PEO-logo-final.png" 
-                alt="Invopeo Logo" 
+                alt="INVO PEO Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
             </div>
@@ -97,7 +96,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
                 className="w-12 h-12 object-contain p-1"
               />
             </div>
-          ) : isMigInsurance ? (
+          ) : isMadisonInsurance ? (
             <div 
               className={cn(
                 "w-14 h-14 flex items-center justify-center rounded-lg overflow-hidden",
@@ -108,11 +107,11 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
             >
               <img 
                 src="/images/HEADER---MIG-AVATAR-LOGO---MADISON-ONLY-1.png.webp" 
-                alt="MIG Insurance Group Logo" 
+                alt="Madison Insurance Group Logo" 
                 className="w-12 h-12 object-contain p-1 brightness-125"
               />
             </div>
-          ) : isLearnInsurance ? (
+          ) : isInsuranceTraining ? (
             <div 
               className={cn(
                 "w-14 h-14 flex items-center justify-center rounded-lg overflow-hidden",
@@ -123,7 +122,7 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
             >
               <img 
                 src="/images/ITS-weblogo200.jpg" 
-                alt="Learn Insurance Live Logo" 
+                alt="Insurance Training School Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
             </div>
@@ -139,21 +138,6 @@ const BusinessCard = ({ name, description, url, index }: BusinessCardProps) => {
               <img 
                 src="/images/INVOU logo-HORIZ.png" 
                 alt="INVO Underwriting Logo" 
-                className="w-12 h-12 object-contain p-1"
-              />
-            </div>
-          ) : isMadisonianetwork ? (
-            <div 
-              className={cn(
-                "w-14 h-14 flex items-center justify-center rounded-lg overflow-hidden",
-                "bg-white",
-                "transition-all duration-500",
-                isHovered ? "scale-110" : "scale-100"
-              )}
-            >
-              <img 
-                src="/images/MIAN_logo_notag.svg" 
-                alt="Madisonianetwork Logo" 
                 className="w-12 h-12 object-contain p-1"
               />
             </div>
